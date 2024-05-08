@@ -83,4 +83,28 @@ route.put('/pedidos', async (req, res) => {
   }
 });
 
+route.patch('/pedidos', async (req, res) => {
+  try {
+    let pedidos = req.body;
+    const data = JSON.parse(await readFile('pedidos.json'));
+    const index = data.pedidos.findIndex(a => a.id === pedidos.id);
+
+    data.pedidos[index].entregue = pedidos.entregue;
+
+    if (!pedidos.entregue || typeof pedidos.entregue !== 'boolean') {
+      res
+        .status(400)
+        .send({ error: 'O campo entregue precisa ser preenchido.' });
+    }
+
+    let timeStamp = new Date();
+    pedidos.timeStamp = timeStamp;
+
+    await writeFile('pedidos.json', JSON.stringify(data));
+    res.send(data.pedidos[index]);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 export default route;
