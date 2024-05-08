@@ -1,13 +1,14 @@
+import { time } from 'console';
 import express from 'express';
-import { promises } from 'fs';
+import { promises as fs } from 'fs';
 const route = express.Router();
 
-const { readFile, writeFile } = 'fs';
+const { readFile, writeFile } = fs;
 
 route.post('/pedidos', async (req, res) => {
   try {
     let pedidos = req.body;
-    const data = JSON.parce(await readFile('pedidos.json'));
+    const data = JSON.parse(await readFile('pedidos.json'));
 
     if (!pedidos.cliente || typeof pedidos.cliente !== 'string') {
       res
@@ -36,6 +37,46 @@ route.post('/pedidos', async (req, res) => {
 
     await writeFile('pedidos.json', JSON.stringify(data));
 
+    res.send(pedidos);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+route.put('/pedidos', async (req, res) => {
+  try {
+    let pedidos = req.body;
+    const data = JSON.parse(await readFile('pedidos.json'));
+    const index = data.pedidos.findIndex(a => a.id === pedidos.id);
+
+    data.pedidos[index] = pedidos;
+
+    if (!pedidos.cliente || typeof pedidos.cliente !== 'string') {
+      res
+        .status(400)
+        .send({ error: 'O campo cliente precisa ser preenchido.' });
+    }
+
+    if (!pedidos.produto || typeof pedidos.produto !== 'string') {
+      res
+        .status(400)
+        .send({ error: 'O campo produto precisa ser preenchido.' });
+    }
+
+    if (!pedidos.valor || typeof pedidos.valor !== 'number') {
+      res.status(400).send({ error: 'O campo valor precisa ser preenchido.' });
+    }
+
+    if (!pedidos.entregue || typeof pedidos.entregue !== 'string') {
+      res
+        .status(400)
+        .send({ error: 'O campo entregue precisa ser preenchido.' });
+    }
+
+    let timeStamp = new Date();
+    pedidos.timeStamp = timeStamp;
+
+    await writeFile('pedidos.json', JSON.stringify(data));
     res.send(pedidos);
   } catch (err) {
     console.log(err);
