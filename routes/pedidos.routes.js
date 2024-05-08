@@ -107,4 +107,17 @@ route.patch('/pedidos', async (req, res) => {
   }
 });
 
+route.delete('/pedidos/:id', async (req, res) => {
+  try {
+    const data = JSON.parse(await readFile('pedidos.json'));
+    data.pedidos = data.pedidos.filter(
+      pedidos => pedidos.id !== parseInt(req.params.id)
+    );
+    await writeFile('pedidos.json', JSON.stringify(data));
+    res.send({ message: 'O pedido foi excluído com sucesso!' });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 export default route;
