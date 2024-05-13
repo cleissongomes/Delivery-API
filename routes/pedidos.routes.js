@@ -120,4 +120,62 @@ route.delete('/pedidos/:id', async (req, res) => {
   }
 });
 
+route.get('/pedidos/:id', async (req, res) => {
+  try {
+    const data = JSON.parse(await readFile('pedidos.json'));
+    data.pedidos = data.pedidos.filter(
+      pedidos => pedidos.id === parseInt(req.params.id)
+    );
+    res.send(data.pedidos);
+  } catch (err) {
+    console.log();
+  }
+});
+
+route.post('/pedidos/:cliente', async (req, res) => {
+  try {
+    const data = JSON.parse(await readFile('pedidos.json'));
+    const cliente = req.params.cliente;
+
+    const pedidosEntreguesDoCliente = data.pedidos.filter(
+      pedidos => pedidos.cliente === cliente && pedidos.entregue
+    );
+
+    const valorTotalPedidos = pedidosEntreguesDoCliente.reduce(
+      (total, pedido) => total + pedido.valor,
+      0
+    );
+
+    res.send({
+      cliente: cliente,
+      valor_total_pedidos: valorTotalPedidos,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+route.post('/valor_total_pedidos/:produto', async (req, res) => {
+  try {
+    const data = JSON.parse(await readFile('pedidos.json'));
+    const produtoParam = req.params.produto;
+
+    const pedidosEntreguesDoProduto = data.pedidos.filter(
+      pedido => pedido.entregue && pedido.produto === produtoParam
+    );
+
+    const valorTotalPedidos = pedidosEntreguesDoProduto.reduce(
+      (total, pedido) => total + pedido.valor,
+      0
+    );
+
+    res.send({
+      produto: produtoParam,
+      valor_total_pedidos: valorTotalPedidos,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 export default route;
