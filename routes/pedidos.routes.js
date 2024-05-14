@@ -1,6 +1,6 @@
 import { time } from 'console';
 import express from 'express';
-import { promises as fs } from 'fs';
+import { promises as fs, read } from 'fs';
 const route = express.Router();
 
 const { readFile, writeFile } = fs;
@@ -173,6 +173,34 @@ route.post('/valor_total_pedidos/:produto', async (req, res) => {
       produto: produtoParam,
       valor_total_pedidos: valorTotalPedidos,
     });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+route.get('', async (req, res) => {
+  try {
+    const data = JSON.parse(await readFile('pedidos.json'));
+    const pedidosEntregues = data.pedidos.filter(pedido => pedido.entregue);
+    const produtosQuantidade = {};
+    pedidosEntregues.forEach(pedido => {
+      if (produtosQuantidade[pedido.produto]) {
+        produtosQuantidade[pedido.produto]++;
+      } else {
+        produtosQuantidade[pedido.produto] = 1;
+      }
+    });
+
+    const produtosMaisVendidos = Object.entries(produtosQuantidade).map(
+      ([produto, quantidade]) => [produto, quantidade]
+    );
+
+    produtosMaisVendidos.sort((a, b) => b.quantidade - a.quantidade);
+
+    const resultadoFinal = produtosMaisVendidos.map(
+      produto => `${produto.produto} - ${produto.quantidade}`
+    );
+    res.send(resultadoFinal);
   } catch (err) {
     console.log(err);
   }
