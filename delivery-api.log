@@ -1,0 +1,26 @@
+2024-05-15T13:18:31.773Z [delivery-api] info: Api Started! 
+2024-05-15T13:21:47.482Z [delivery-api] info: Api Started! 
+2024-05-15T13:22:16.824Z [delivery-api] info: Api Started! 
+2024-05-15T13:24:48.565Z [delivery-api] info: Api Started! 
+2024-05-15T13:25:20.623Z [delivery-api] info: Api Started! 
+2024-05-15T13:25:52.220Z [delivery-api] info: Api Started! 
+2024-05-15T13:34:47.897Z [delivery-api] info: Api Started! 
+2024-05-15T13:36:18.511Z [delivery-api] info: POST /pedidos, {"id":508,"cliente":"Cleisson Gomes","produto":"pizza calabresa","valor":28,"entregue":"false","timeStamp":"2024-05-15T13:36:18.498Z"} 
+2024-05-15T13:36:18.834Z [delivery-api] info: Api Started! 
+2024-05-15T13:36:38.340Z [delivery-api] info: PUT /pedidos, {"id":508,"cliente":"Cleisson Silva","produto":"pizza palmito","valor":32,"entregue":"false","timeStamp":"2024-05-15T13:36:38.334Z"} 
+2024-05-15T13:36:38.635Z [delivery-api] info: Api Started! 
+2024-05-15T13:37:36.759Z [delivery-api] error: PUT  - Cannot set headers after they are sent to the client 
+2024-05-15T13:37:37.039Z [delivery-api] info: Api Started! 
+2024-05-15T13:37:51.222Z [delivery-api] info: PUT /pedidos, {"id":508,"cliente":"Cleisson Silva","produto":"pizza palmito","valor":32,"entregue":"false","timeStamp":"2024-05-15T13:37:51.211Z"} 
+2024-05-15T13:37:51.539Z [delivery-api] info: Api Started! 
+2024-05-15T13:38:04.547Z [delivery-api] info: PATCH /pedidos, {"id":508,"entregue":true,"timeStamp":"2024-05-15T13:38:04.539Z"} 
+2024-05-15T13:38:04.832Z [delivery-api] info: Api Started! 
+2024-05-15T13:38:44.601Z [delivery-api] info: GET /pedidos/:id 
+2024-05-15T13:39:15.155Z [delivery-api] error: POST  - pedidos is not defined 
+2024-05-15T13:39:40.683Z [delivery-api] error: POST  - pedidos is not defined 
+2024-05-15T13:40:00.461Z [delivery-api] error: POST  - pedidos is not defined 
+2024-05-15T13:40:36.845Z [delivery-api] error: POST  - pedidos is not defined 
+2024-05-15T13:40:43.391Z [delivery-api] info: GET /pedidos 
+2024-05-15T13:40:55.900Z [delivery-api] info: DELETE /pedidos/:id, 508 
+2024-05-15T13:40:56.188Z [delivery-api] info: Api Started! 
+2024-05-15T13:41:24.593Z [delivery-api] info: Api Started! 

@@ -37,6 +37,7 @@ route.post('/pedidos', async (req, res, next) => {
     await writeFile('pedidos.json', JSON.stringify(data));
 
     res.send(pedidos);
+    global.logger.info(`POST /pedidos, ${JSON.stringify(pedidos)}`);
   } catch (err) {
     next(err);
   }
@@ -77,6 +78,7 @@ route.put('/pedidos', async (req, res, next) => {
 
     await writeFile('pedidos.json', JSON.stringify(data));
     res.send(pedidos);
+    global.logger.info(`PUT /pedidos, ${JSON.stringify(pedidos)}`);
   } catch (err) {
     next(err);
   }
@@ -101,6 +103,7 @@ route.patch('/pedidos', async (req, res, next) => {
 
     await writeFile('pedidos.json', JSON.stringify(data));
     res.send(data.pedidos[index]);
+    global.logger.info(`PATCH /pedidos, ${JSON.stringify(pedidos)}`);
   } catch (err) {
     next(err);
   }
@@ -114,6 +117,7 @@ route.delete('/pedidos/:id', async (req, res, next) => {
     );
     await writeFile('pedidos.json', JSON.stringify(data));
     res.send({ message: 'O pedido foi excluído com sucesso!' });
+    global.logger.info(`DELETE /pedidos/:id, ${req.params.id}`);
   } catch (err) {
     next(err);
   }
@@ -126,6 +130,7 @@ route.get('/pedidos/:id', async (req, res, next) => {
       pedidos => pedidos.id === parseInt(req.params.id)
     );
     res.send(data.pedidos);
+    global.logger.info(`GET /pedidos/:id`);
   } catch (err) {
     next(err);
   }
@@ -149,6 +154,7 @@ route.post('/pedidos/:cliente', async (req, res, next) => {
       cliente: cliente,
       valor_total_pedidos: valorTotalPedidos,
     });
+    global.logger.info(`POST /pedidos/:cliente, ${JSON.stringify(pedidos)}`);
   } catch (err) {
     next(err);
   }
@@ -172,6 +178,9 @@ route.post('/valor_total_pedidos/:produto', async (req, res, next) => {
       produto: produtoParam,
       valor_total_pedidos: valorTotalPedidos,
     });
+    global.logger.info(
+      `POST /pedidos/valo_total_pedidos/:produto, ${JSON.stringify(pedidos)}`
+    );
   } catch (err) {
     next(err);
   }
@@ -200,13 +209,14 @@ route.get('/', async (req, res, next) => {
       ([produto, quantidade]) => `${produto} - ${quantidade}`
     );
     res.send(resultadoFinal);
+    global.logger.info(`GET /pedidos`);
   } catch (err) {
     next(err);
   }
 });
 
 route.use((err, req, res, next) => {
-  console.log(err);
+  global.logger.error(`${req.method} ${req.baseUrl} - ${err.message}`);
   res.status(400).send({ error: err.message });
 });
 
