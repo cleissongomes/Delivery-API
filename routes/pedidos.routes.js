@@ -1,11 +1,10 @@
-import { time } from 'console';
 import express from 'express';
 import { promises as fs, read } from 'fs';
 const route = express.Router();
 
 const { readFile, writeFile } = fs;
 
-route.post('/pedidos', async (req, res) => {
+route.post('/pedidos', async (req, res, next) => {
   try {
     let pedidos = req.body;
     const data = JSON.parse(await readFile('pedidos.json'));
@@ -39,11 +38,11 @@ route.post('/pedidos', async (req, res) => {
 
     res.send(pedidos);
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 });
 
-route.put('/pedidos', async (req, res) => {
+route.put('/pedidos', async (req, res, next) => {
   try {
     let pedidos = req.body;
     const data = JSON.parse(await readFile('pedidos.json'));
@@ -79,11 +78,11 @@ route.put('/pedidos', async (req, res) => {
     await writeFile('pedidos.json', JSON.stringify(data));
     res.send(pedidos);
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 });
 
-route.patch('/pedidos', async (req, res) => {
+route.patch('/pedidos', async (req, res, next) => {
   try {
     let pedidos = req.body;
     const data = JSON.parse(await readFile('pedidos.json'));
@@ -103,11 +102,11 @@ route.patch('/pedidos', async (req, res) => {
     await writeFile('pedidos.json', JSON.stringify(data));
     res.send(data.pedidos[index]);
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 });
 
-route.delete('/pedidos/:id', async (req, res) => {
+route.delete('/pedidos/:id', async (req, res, next) => {
   try {
     const data = JSON.parse(await readFile('pedidos.json'));
     data.pedidos = data.pedidos.filter(
@@ -116,11 +115,11 @@ route.delete('/pedidos/:id', async (req, res) => {
     await writeFile('pedidos.json', JSON.stringify(data));
     res.send({ message: 'O pedido foi excluído com sucesso!' });
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 });
 
-route.get('/pedidos/:id', async (req, res) => {
+route.get('/pedidos/:id', async (req, res, next) => {
   try {
     const data = JSON.parse(await readFile('pedidos.json'));
     data.pedidos = data.pedidos.filter(
@@ -128,11 +127,11 @@ route.get('/pedidos/:id', async (req, res) => {
     );
     res.send(data.pedidos);
   } catch (err) {
-    console.log();
+    next(err);
   }
 });
 
-route.post('/pedidos/:cliente', async (req, res) => {
+route.post('/pedidos/:cliente', async (req, res, next) => {
   try {
     const data = JSON.parse(await readFile('pedidos.json'));
     const cliente = req.params.cliente;
@@ -151,11 +150,11 @@ route.post('/pedidos/:cliente', async (req, res) => {
       valor_total_pedidos: valorTotalPedidos,
     });
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 });
 
-route.post('/valor_total_pedidos/:produto', async (req, res) => {
+route.post('/valor_total_pedidos/:produto', async (req, res, next) => {
   try {
     const data = JSON.parse(await readFile('pedidos.json'));
     const produtoParam = req.params.produto;
@@ -174,11 +173,11 @@ route.post('/valor_total_pedidos/:produto', async (req, res) => {
       valor_total_pedidos: valorTotalPedidos,
     });
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 });
 
-route.get('', async (req, res) => {
+route.get('/', async (req, res, next) => {
   try {
     const data = JSON.parse(await readFile('pedidos.json'));
     const pedidosEntregues = data.pedidos.filter(pedido => pedido.entregue);
@@ -195,15 +194,20 @@ route.get('', async (req, res) => {
       ([produto, quantidade]) => [produto, quantidade]
     );
 
-    produtosMaisVendidos.sort((a, b) => b.quantidade - a.quantidade);
+    produtosMaisVendidos.sort((a, b) => b[1] - a[1]);
 
     const resultadoFinal = produtosMaisVendidos.map(
-      produto => `${produto.produto} - ${produto.quantidade}`
+      ([produto, quantidade]) => `${produto} - ${quantidade}`
     );
     res.send(resultadoFinal);
   } catch (err) {
-    console.log(err);
+    next(err);
   }
+});
+
+route.use((err, req, res, next) => {
+  console.log(err);
+  res.status(400).send({ error: err.message });
 });
 
 export default route;

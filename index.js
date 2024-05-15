@@ -2,7 +2,7 @@ import express from 'express';
 import route from './routes/pedidos.routes.js';
 import { promises as fs } from 'fs';
 
-const { readFile, writeFile } = 'fs';
+const { readFile, writeFile } = fs;
 
 const app = express();
 app.use(express.json());
