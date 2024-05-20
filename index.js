@@ -1,7 +1,8 @@
 import express from 'express';
 import route from './routes/pedidos.routes.js';
 import { promises as fs } from 'fs';
-import winston, { loggers } from 'winston';
+import winston from 'winston';
+import cors from 'cors';
 
 const { readFile, writeFile } = fs;
 
@@ -21,6 +22,7 @@ global.logger = winston.createLogger({
 });
 
 app.use(express.json());
+app.use(cors());
 app.use(route);
 
 app.listen(5000, async () => {
