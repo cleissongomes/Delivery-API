@@ -25,3 +25,35 @@
 2024-05-15T13:40:56.188Z [delivery-api] info: Api Started! 
 2024-05-15T13:41:24.593Z [delivery-api] info: Api Started! 
 2024-05-20T13:07:55.425Z [delivery-api] info: Api Started! 
+2024-05-23T12:57:30.813Z [delivery-api] info: Api Started! 
+2024-05-23T13:00:27.696Z [delivery-api] info: Api Started! 
+2024-05-23T13:00:30.758Z [delivery-api] error: POST  - readFile is not defined 
+2024-05-23T13:00:47.467Z [delivery-api] info: Api Started! 
+2024-05-23T13:00:50.137Z [delivery-api] error: POST  - readFile is not defined 
+2024-05-23T13:01:35.214Z [delivery-api] info: Api Started! 
+2024-05-23T13:01:41.934Z [delivery-api] info: POST /pedidos, {"id":501,"cliente":"Cleisson Gomes","produto":"pizza Atum","valor":28,"entregue":"false","timeStamp":"2024-05-23T13:01:41.927Z"} 
+2024-05-23T13:01:42.231Z [delivery-api] info: Api Started! 
+2024-05-23T13:13:53.413Z [delivery-api] info: Api Started! 
+2024-05-23T13:14:09.544Z [delivery-api] info: PUT /pedidos, {"id":501,"cliente":"Cleisson Silva","produto":"pizza palmito","valor":32,"entregue":"false","timeStamp":"2024-05-23T13:14:09.531Z"} 
+2024-05-23T13:14:09.839Z [delivery-api] info: Api Started! 
+2024-05-23T13:14:45.811Z [delivery-api] info: PATCH /pedidos, {"id":501,"entregue":true,"timeStamp":"2024-05-23T13:14:45.800Z"} 
+2024-05-23T13:14:46.116Z [delivery-api] info: Api Started! 
+2024-05-23T13:15:31.335Z [delivery-api] info: Api Started! 
+2024-05-23T13:15:34.733Z [delivery-api] info: DELETE /pedidos/:id, 501 
+2024-05-23T13:15:35.023Z [delivery-api] info: Api Started! 
+2024-05-23T13:16:04.391Z [delivery-api] info: Api Started! 
+2024-05-23T13:16:06.053Z [delivery-api] info: GET /pedidos/:id 
+2024-05-23T13:19:19.179Z [delivery-api] info: Api Started! 
+2024-05-23T13:19:47.538Z [delivery-api] error: POST  - pedidos is not defined 
+2024-05-23T13:20:04.783Z [delivery-api] info: Api Started! 
+2024-05-23T13:20:59.068Z [delivery-api] info: Api Started! 
+2024-05-23T13:21:22.737Z [delivery-api] info: Api Started! 
+2024-05-23T13:21:28.563Z [delivery-api] error: POST  - pedidos is not defined 
+2024-05-23T13:21:43.823Z [delivery-api] info: Api Started! 
+2024-05-23T13:21:48.708Z [delivery-api] info: Api Started! 
+2024-05-23T13:21:58.473Z [delivery-api] info: Api Started! 
+2024-05-23T13:23:08.397Z [delivery-api] info: Api Started! 
+2024-05-23T13:23:55.902Z [delivery-api] info: Api Started! 
+2024-05-23T13:24:13.695Z [delivery-api] info: Api Started! 
+2024-05-23T13:24:39.098Z [delivery-api] info: Api Started! 
+2024-05-23T13:24:45.739Z [delivery-api] info: GET /pedidos 
