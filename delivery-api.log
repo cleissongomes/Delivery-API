@@ -57,3 +57,209 @@
 2024-05-23T13:24:13.695Z [delivery-api] info: Api Started! 
 2024-05-23T13:24:39.098Z [delivery-api] info: Api Started! 
 2024-05-23T13:24:45.739Z [delivery-api] info: GET /pedidos 
+2024-05-27T12:20:54.353Z [delivery-api] info: Api Started! 
+2024-05-27T12:21:06.914Z [delivery-api] info: Api Started! 
+2024-05-27T12:21:42.661Z [delivery-api] info: Api Started! 
+2024-05-27T12:22:33.568Z [delivery-api] info: Api Started! 
+2024-05-27T12:23:49.145Z [delivery-api] info: Api Started! 
+2024-05-27T12:24:24.264Z [delivery-api] info: Api Started! 
+2024-05-27T12:24:53.321Z [delivery-api] info: Api Started! 
+2024-05-27T12:25:05.518Z [delivery-api] info: Api Started! 
+2024-05-27T12:25:16.469Z [delivery-api] info: Api Started! 
+2024-05-27T12:25:26.117Z [delivery-api] info: Api Started! 
+2024-05-27T12:26:20.347Z [delivery-api] info: Api Started! 
+2024-05-27T12:26:41.791Z [delivery-api] info: Api Started! 
+2024-05-27T12:27:33.347Z [delivery-api] info: Api Started! 
+2024-05-27T12:27:45.888Z [delivery-api] info: Api Started! 
+2024-05-27T12:29:00.534Z [delivery-api] info: Api Started! 
+2024-05-27T12:29:15.460Z [delivery-api] info: Api Started! 
+2024-05-27T12:36:40.394Z [delivery-api] info: Api Started! 
+2024-05-27T12:38:46.401Z [delivery-api] info: POST /pedidos, {"id":502,"cliente":"Cleisson Gomes","produto":"pizza Atum","valor":28,"entregue":"false","timeStamp":"2024-05-27T12:38:46.385Z"} 
+2024-05-27T12:38:46.717Z [delivery-api] info: Api Started! 
+2024-05-27T12:40:36.793Z [delivery-api] info: Api Started! 
+2024-05-27T12:40:53.303Z [delivery-api] info: Api Started! 
+2024-05-27T12:41:02.560Z [delivery-api] info: Api Started! 
+2024-05-27T12:41:36.410Z [delivery-api] info: Api Started! 
+2024-05-27T12:42:01.666Z [delivery-api] info: Api Started! 
+2024-05-27T12:43:02.223Z [delivery-api] info: Api Started! 
+2024-05-27T12:43:34.150Z [delivery-api] info: Api Started! 
+2024-05-27T12:43:52.365Z [delivery-api] info: PUT /pedidos, {"id":502,"cliente":"Cleisson Silva","produto":"pizza palmito","valor":32,"entregue":"false","timeStamp":"2024-05-27T12:43:52.356Z"} 
+2024-05-27T12:43:52.668Z [delivery-api] info: Api Started! 
+2024-05-27T12:44:57.880Z [delivery-api] info: Api Started! 
+2024-05-27T12:45:10.138Z [delivery-api] info: Api Started! 
+2024-05-27T12:45:14.788Z [delivery-api] info: Api Started! 
+2024-05-27T12:45:22.718Z [delivery-api] info: Api Started! 
+2024-05-27T12:45:46.624Z [delivery-api] info: Api Started! 
+2024-05-27T12:46:23.125Z [delivery-api] info: Api Started! 
+2024-05-27T12:46:50.634Z [delivery-api] info: Api Started! 
+2024-05-27T12:47:24.009Z [delivery-api] info: Api Started! 
+2024-05-27T12:47:57.253Z [delivery-api] info: Api Started! 
+2024-05-27T12:48:02.878Z [delivery-api] info: Api Started! 
+2024-05-27T12:48:20.268Z [delivery-api] error: PATCH  - data is not defined 
+2024-05-27T12:48:20.567Z [delivery-api] info: Api Started! 
+2024-05-27T12:48:25.227Z [delivery-api] error: PATCH  - data is not defined 
+2024-05-27T12:48:25.516Z [delivery-api] info: Api Started! 
+2024-05-27T12:49:18.070Z [delivery-api] error: PATCH  - data is not defined 
+2024-05-27T12:49:18.368Z [delivery-api] info: Api Started! 
+2024-05-27T12:49:35.040Z [delivery-api] error: PATCH  - data is not defined 
+2024-05-27T12:49:35.352Z [delivery-api] info: Api Started! 
+2024-05-27T12:49:57.903Z [delivery-api] info: Api Started! 
+2024-05-27T12:49:59.984Z [delivery-api] error: PATCH  - data is not defined 
+2024-05-27T12:50:00.288Z [delivery-api] info: Api Started! 
+2024-05-27T12:50:09.736Z [delivery-api] error: PATCH  - data is not defined 
+2024-05-27T12:50:10.045Z [delivery-api] info: Api Started! 
+2024-05-27T12:50:16.540Z [delivery-api] error: PATCH  - data is not defined 
+2024-05-27T12:50:16.826Z [delivery-api] info: Api Started! 
+2024-05-27T12:50:49.022Z [delivery-api] info: Api Started! 
+2024-05-27T12:51:03.866Z [delivery-api] info: Api Started! 
+2024-05-27T12:52:09.934Z [delivery-api] info: Api Started! 
+2024-05-27T12:52:18.584Z [delivery-api] info: Api Started! 
+2024-05-27T12:52:37.713Z [delivery-api] info: Api Started! 
+2024-05-27T12:52:46.289Z [delivery-api] info: Api Started! 
+2024-05-27T12:53:49.599Z [delivery-api] info: Api Started! 
+2024-05-27T12:54:12.365Z [delivery-api] error: DELETE  - req is not defined 
+2024-05-27T12:55:06.258Z [delivery-api] info: Api Started! 
+2024-05-27T12:55:10.404Z [delivery-api] error: DELETE  - pedidos is not defined 
+2024-05-27T12:55:10.727Z [delivery-api] info: Api Started! 
+2024-05-27T12:55:34.804Z [delivery-api] info: POST /pedidos, {"id":503,"cliente":"Cleisson Gomes","produto":"pizza Atum","valor":28,"entregue":"false","timeStamp":"2024-05-27T12:55:34.788Z"} 
+2024-05-27T12:55:35.152Z [delivery-api] info: Api Started! 
+2024-05-27T12:55:44.792Z [delivery-api] error: DELETE  - pedidos is not defined 
+2024-05-27T12:55:45.162Z [delivery-api] info: Api Started! 
+2024-05-27T12:55:52.701Z [delivery-api] info: POST /pedidos, {"id":504,"cliente":"Cleisson Gomes","produto":"pizza Atum","valor":28,"entregue":"false","timeStamp":"2024-05-27T12:55:52.695Z"} 
+2024-05-27T12:55:53.032Z [delivery-api] info: Api Started! 
+2024-05-27T12:57:44.106Z [delivery-api] info: Api Started! 
+2024-05-27T12:57:47.873Z [delivery-api] error: DELETE  - pedidos is not defined 
+2024-05-27T12:57:48.162Z [delivery-api] info: Api Started! 
+2024-05-27T12:57:57.644Z [delivery-api] info: Api Started! 
+2024-05-27T12:58:59.571Z [delivery-api] info: Api Started! 
+2024-05-27T12:59:01.909Z [delivery-api] error: DELETE  - pedidos is not defined 
+2024-05-27T12:59:02.254Z [delivery-api] info: Api Started! 
+2024-05-27T12:59:03.902Z [delivery-api] error: DELETE  - pedidos is not defined 
+2024-05-27T12:59:04.184Z [delivery-api] info: Api Started! 
+2024-05-27T12:59:24.962Z [delivery-api] info: Api Started! 
+2024-05-27T12:59:52.361Z [delivery-api] info: Api Started! 
+2024-05-27T13:00:12.058Z [delivery-api] error: DELETE  - pedidos is not defined 
+2024-05-27T13:00:12.361Z [delivery-api] info: Api Started! 
+2024-05-27T13:00:52.447Z [delivery-api] info: Api Started! 
+2024-05-27T13:01:57.172Z [delivery-api] info: Api Started! 
+2024-05-27T13:02:33.215Z [delivery-api] info: Api Started! 
+2024-05-27T13:02:56.604Z [delivery-api] info: Api Started! 
+2024-05-27T13:04:23.054Z [delivery-api] info: Api Started! 
+2024-05-27T13:09:07.950Z [delivery-api] info: Api Started! 
+2024-05-27T13:10:00.290Z [delivery-api] info: Api Started! 
+2024-05-27T13:10:38.387Z [delivery-api] info: Api Started! 
+2024-05-27T13:10:43.362Z [delivery-api] error: POST  - pedidos is not defined 
+2024-05-27T13:11:23.124Z [delivery-api] info: Api Started! 
+2024-05-27T13:11:25.771Z [delivery-api] error: POST  - pedidos is not defined 
+2024-05-27T13:12:16.496Z [delivery-api] info: Api Started! 
+2024-05-27T13:12:32.611Z [delivery-api] info: POST /pedidos, {"id":501,"cliente":"Cleisson Gomes","produto":"pizza Atum","valor":28,"entregue":"false","timeStamp":"2024-05-27T13:12:32.596Z"} 
+2024-05-27T13:12:32.955Z [delivery-api] info: Api Started! 
+2024-05-27T13:12:41.765Z [delivery-api] info: DELETE /pedidos/:id, 501 
+2024-05-27T13:12:42.085Z [delivery-api] info: Api Started! 
+2024-05-27T13:13:11.126Z [delivery-api] info: Api Started! 
+2024-05-27T13:13:16.296Z [delivery-api] error: GET  - pedido is not defined 
+2024-05-27T13:13:48.551Z [delivery-api] info: Api Started! 
+2024-05-27T13:14:07.515Z [delivery-api] info: Api Started! 
+2024-05-27T13:14:12.315Z [delivery-api] error: GET  - data is not defined 
+2024-05-27T13:15:10.627Z [delivery-api] info: Api Started! 
+2024-05-27T13:15:13.053Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:15:59.920Z [delivery-api] info: Api Started! 
+2024-05-27T13:16:01.515Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:16:03.291Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:16:50.641Z [delivery-api] info: Api Started! 
+2024-05-27T13:16:52.600Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:16:53.694Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:17:03.805Z [delivery-api] info: Api Started! 
+2024-05-27T13:17:05.732Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:17:06.891Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:17:12.707Z [delivery-api] info: Api Started! 
+2024-05-27T13:17:14.613Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:17:35.742Z [delivery-api] info: Api Started! 
+2024-05-27T13:17:44.578Z [delivery-api] error: POST  - pedidos is not defined 
+2024-05-27T13:18:10.942Z [delivery-api] info: Api Started! 
+2024-05-27T13:18:14.178Z [delivery-api] error: POST  - valorTotalPedidos is not defined 
+2024-05-27T13:18:58.119Z [delivery-api] info: Api Started! 
+2024-05-27T13:18:59.838Z [delivery-api] error: POST  - valorTotalPedidos is not defined 
+2024-05-27T13:19:01.378Z [delivery-api] error: POST  - valorTotalPedidos is not defined 
+2024-05-27T13:19:02.323Z [delivery-api] error: POST  - valorTotalPedidos is not defined 
+2024-05-27T13:19:02.462Z [delivery-api] error: POST  - valorTotalPedidos is not defined 
+2024-05-27T13:19:02.617Z [delivery-api] error: POST  - valorTotalPedidos is not defined 
+2024-05-27T13:19:02.770Z [delivery-api] error: POST  - valorTotalPedidos is not defined 
+2024-05-27T13:19:55.823Z [delivery-api] info: Api Started! 
+2024-05-27T13:20:02.416Z [delivery-api] info: Api Started! 
+2024-05-27T13:20:04.623Z [delivery-api] error: POST  - pedidosEntreguesDoCliente is not defined 
+2024-05-27T13:20:05.843Z [delivery-api] error: POST  - pedidosEntreguesDoCliente is not defined 
+2024-05-27T13:20:34.368Z [delivery-api] info: Api Started! 
+2024-05-27T13:21:08.277Z [delivery-api] info: Api Started! 
+2024-05-27T13:21:51.448Z [delivery-api] info: Api Started! 
+2024-05-27T13:23:07.485Z [delivery-api] info: Api Started! 
+2024-05-27T13:23:53.554Z [delivery-api] info: Api Started! 
+2024-05-27T13:24:32.409Z [delivery-api] info: Api Started! 
+2024-05-27T13:25:01.225Z [delivery-api] error: POST  - produto is not defined 
+2024-05-27T13:27:04.420Z [delivery-api] info: Api Started! 
+2024-05-27T13:27:32.854Z [delivery-api] info: Api Started! 
+2024-05-27T13:27:50.960Z [delivery-api] info: Api Started! 
+2024-05-27T13:28:18.871Z [delivery-api] info: Api Started! 
+2024-05-27T13:28:29.809Z [delivery-api] info: Api Started! 
+2024-05-27T13:29:28.820Z [delivery-api] info: Api Started! 
+2024-05-27T13:29:43.016Z [delivery-api] info: Api Started! 
+2024-05-27T13:29:57.144Z [delivery-api] info: POST /pedidos, {"id":502,"cliente":"Cleisson Gomes","produto":"pizza Atum","valor":28,"entregue":"false","timeStamp":"2024-05-27T13:29:57.137Z"} 
+2024-05-27T13:29:57.453Z [delivery-api] info: Api Started! 
+2024-05-27T13:30:04.547Z [delivery-api] info: PUT /pedidos, {"id":502,"cliente":"Cleisson Silva","produto":"pizza palmito","valor":32,"entregue":"false","timeStamp":"2024-05-27T13:30:04.540Z"} 
+2024-05-27T13:30:04.866Z [delivery-api] info: Api Started! 
+2024-05-27T13:30:12.593Z [delivery-api] error: PATCH  - data is not defined 
+2024-05-27T13:30:12.885Z [delivery-api] info: Api Started! 
+2024-05-27T13:31:07.635Z [delivery-api] info: Api Started! 
+2024-05-27T13:31:12.821Z [delivery-api] error: PATCH  - index is not defined 
+2024-05-27T13:31:13.133Z [delivery-api] info: Api Started! 
+2024-05-27T13:31:26.687Z [delivery-api] info: Api Started! 
+2024-05-27T13:31:29.105Z [delivery-api] info: PATCH /pedidos, true 
+2024-05-27T13:31:29.406Z [delivery-api] info: Api Started! 
+2024-05-27T13:32:07.316Z [delivery-api] info: Api Started! 
+2024-05-27T13:32:44.955Z [delivery-api] info: Api Started! 
+2024-05-27T13:34:00.364Z [delivery-api] info: Api Started! 
+2024-05-27T13:34:03.193Z [delivery-api] info: PATCH /pedidos, {"id":502,"entregue":true,"timeStamp":"2024-05-27T13:34:03.187Z"} 
+2024-05-27T13:34:03.496Z [delivery-api] info: Api Started! 
+2024-05-27T13:34:46.869Z [delivery-api] info: DELETE /pedidos/:id, 502 
+2024-05-27T13:34:47.168Z [delivery-api] info: Api Started! 
+2024-05-27T13:35:45.722Z [delivery-api] info: Api Started! 
+2024-05-27T13:35:59.563Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:36:02.020Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:36:31.641Z [delivery-api] info: Api Started! 
+2024-05-27T13:36:33.150Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:36:34.420Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:36:52.382Z [delivery-api] info: Api Started! 
+2024-05-27T13:37:23.844Z [delivery-api] info: Api Started! 
+2024-05-27T13:38:48.650Z [delivery-api] info: Api Started! 
+2024-05-27T13:39:18.433Z [delivery-api] info: GET /pedidos/:id 
+2024-05-27T13:39:59.614Z [delivery-api] info: Api Started! 
+2024-05-27T13:40:15.298Z [delivery-api] info: Api Started! 
+2024-05-27T13:40:42.698Z [delivery-api] info: Api Started! 
+2024-05-27T13:40:48.734Z [delivery-api] error: POST  - pedidos is not defined 
+2024-05-27T13:41:07.812Z [delivery-api] info: Api Started! 
+2024-05-27T13:41:21.187Z [delivery-api] info: Api Started! 
+2024-05-27T13:41:41.173Z [delivery-api] info: Api Started! 
+2024-05-27T13:41:54.116Z [delivery-api] error: POST  - produto is not defined 
+2024-05-27T13:41:55.579Z [delivery-api] error: POST  - produto is not defined 
+2024-05-27T13:42:08.163Z [delivery-api] info: Api Started! 
+2024-05-27T13:42:10.334Z [delivery-api] error: POST  - produto is not defined 
+2024-05-27T13:42:49.497Z [delivery-api] info: Api Started! 
+2024-05-27T13:43:03.641Z [delivery-api] error: POST  - req is not defined 
+2024-05-27T13:43:37.663Z [delivery-api] info: Api Started! 
+2024-05-27T13:43:39.153Z [delivery-api] error: POST  - req is not defined 
+2024-05-27T13:43:40.820Z [delivery-api] error: POST  - req is not defined 
+2024-05-27T13:44:30.957Z [delivery-api] info: Api Started! 
+2024-05-27T13:44:48.715Z [delivery-api] info: Api Started! 
+2024-05-27T13:45:04.425Z [delivery-api] info: Api Started! 
+2024-05-27T13:45:06.495Z [delivery-api] error: POST  - produtoParam is not defined 
+2024-05-27T13:45:34.554Z [delivery-api] info: Api Started! 
+2024-05-27T13:45:35.946Z [delivery-api] error: POST  - produtoParam is not defined 
+2024-05-27T13:45:36.993Z [delivery-api] error: POST  - produtoParam is not defined 
+2024-05-27T13:45:53.278Z [delivery-api] info: Api Started! 
+2024-05-27T13:45:54.945Z [delivery-api] error: POST  - pedidos is not defined 
+2024-05-27T13:46:08.657Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:46:45.275Z [delivery-api] info: Api Started! 
+2024-05-27T13:46:47.057Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:46:48.195Z [delivery-api] error: GET  - pedidos is not defined 
+2024-05-27T13:47:13.496Z [delivery-api] info: Api Started! 
+2024-05-27T13:47:14.447Z [delivery-api] info: GET /pedidos 

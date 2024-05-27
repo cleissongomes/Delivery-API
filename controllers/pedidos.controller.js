@@ -1,10 +1,10 @@
+import PedidosService from '../services/pedidos.service.js';
 import { promises as fs, read } from 'fs';
 const { readFile, writeFile } = fs;
 
 async function createPedido(req, res, next) {
   try {
     let pedidos = req.body;
-    const data = JSON.parse(await readFile('pedidos.json'));
 
     if (!pedidos.cliente || typeof pedidos.cliente !== 'string') {
       res
@@ -24,15 +24,7 @@ async function createPedido(req, res, next) {
         .status(400)
         .send({ error: 'O campo entregue precisa ser preenchido.' });
     }
-
-    let timeStamp = new Date();
-    pedidos.timeStamp = timeStamp;
-
-    pedidos = { id: data.nextId++, ...pedidos };
-    data.pedidos.push(pedidos);
-
-    await writeFile('pedidos.json', JSON.stringify(data));
-
+    pedidos = await PedidosService.createPedido(pedidos);
     res.send(pedidos);
     global.logger.info(`POST /pedidos, ${JSON.stringify(pedidos)}`);
   } catch (err) {
@@ -43,10 +35,6 @@ async function createPedido(req, res, next) {
 async function updatePedido(req, res, next) {
   try {
     let pedidos = req.body;
-    const data = JSON.parse(await readFile('pedidos.json'));
-    const index = data.pedidos.findIndex(a => a.id === pedidos.id);
-
-    data.pedidos[index] = pedidos;
 
     if (!pedidos.cliente || typeof pedidos.cliente !== 'string') {
       res
@@ -69,11 +57,7 @@ async function updatePedido(req, res, next) {
         .status(400)
         .send({ error: 'O campo entregue precisa ser preenchido.' });
     }
-
-    let timeStamp = new Date();
-    pedidos.timeStamp = timeStamp;
-
-    await writeFile('pedidos.json', JSON.stringify(data));
+    pedidos = await PedidosService.updatePedido(pedidos);
     res.send(pedidos);
     global.logger.info(`PUT /pedidos, ${JSON.stringify(pedidos)}`);
   } catch (err) {
@@ -84,22 +68,13 @@ async function updatePedido(req, res, next) {
 async function updatePedidoEntregue(req, res, next) {
   try {
     let pedidos = req.body;
-    const data = JSON.parse(await readFile('pedidos.json'));
-    const index = data.pedidos.findIndex(a => a.id === pedidos.id);
-
-    data.pedidos[index].entregue = pedidos.entregue;
 
     if (!pedidos.entregue || typeof pedidos.entregue !== 'boolean') {
       res
         .status(400)
         .send({ error: 'O campo entregue precisa ser preenchido.' });
     }
-
-    let timeStamp = new Date();
-    pedidos.timeStamp = timeStamp;
-
-    await writeFile('pedidos.json', JSON.stringify(data));
-    res.send(data.pedidos[index]);
+    res.send(await PedidosService.updatePedidoEntregue(pedidos));
     global.logger.info(`PATCH /pedidos, ${JSON.stringify(pedidos)}`);
   } catch (err) {
     next(err);
@@ -108,11 +83,8 @@ async function updatePedidoEntregue(req, res, next) {
 
 async function deletePedido(req, res, next) {
   try {
-    const data = JSON.parse(await readFile('pedidos.json'));
-    data.pedidos = data.pedidos.filter(
-      pedidos => pedidos.id !== parseInt(req.params.id)
-    );
-    await writeFile('pedidos.json', JSON.stringify(data));
+    let pedidos = req.body;
+    pedidos = await PedidosService.deletePedido(req.params.id);
     res.send({ message: 'O pedido foi excluído com sucesso!' });
     global.logger.info(`DELETE /pedidos/:id, ${req.params.id}`);
   } catch (err) {
@@ -122,11 +94,7 @@ async function deletePedido(req, res, next) {
 
 async function getPedido(req, res, next) {
   try {
-    const data = JSON.parse(await readFile('pedidos.json'));
-    data.pedidos = data.pedidos.filter(
-      pedidos => pedidos.id === parseInt(req.params.id)
-    );
-    res.send(data.pedidos);
+    res.send(await PedidosService.getPedido(req.params.id));
     global.logger.info(`GET /pedidos/:id`);
   } catch (err) {
     next(err);
@@ -135,22 +103,8 @@ async function getPedido(req, res, next) {
 
 async function createValorTotalCliente(req, res, next) {
   try {
-    const data = JSON.parse(await readFile('pedidos.json'));
     const cliente = req.params.cliente;
-
-    const pedidosEntreguesDoCliente = data.pedidos.filter(
-      pedidos => pedidos.cliente === cliente && pedidos.entregue
-    );
-
-    const valorTotalPedidos = pedidosEntreguesDoCliente.reduce(
-      (total, pedido) => total + pedido.valor,
-      0
-    );
-
-    res.send({
-      cliente: cliente,
-      valor_total_pedidos: valorTotalPedidos,
-    });
+    res.send(await PedidosService.createValorTotalCliente(cliente));
     global.logger.info(`POST /pedidos/:cliente, ${JSON.stringify(pedidos)}`);
   } catch (err) {
     next(err);
@@ -159,22 +113,8 @@ async function createValorTotalCliente(req, res, next) {
 
 async function createValorTotalProduto(req, res, next) {
   try {
-    const data = JSON.parse(await readFile('pedidos.json'));
     const produtoParam = req.params.produto;
-
-    const pedidosEntreguesDoProduto = data.pedidos.filter(
-      pedido => pedido.entregue && pedido.produto === produtoParam
-    );
-
-    const valorTotalPedidos = pedidosEntreguesDoProduto.reduce(
-      (total, pedido) => total + pedido.valor,
-      0
-    );
-
-    res.send({
-      produto: produtoParam,
-      valor_total_pedidos: valorTotalPedidos,
-    });
+    res.send(await PedidosService.createValorTotalProduto(produtoParam));
     global.logger.info(
       `POST /pedidos/valo_total_pedidos/:produto, ${JSON.stringify(pedidos)}`
     );
@@ -185,27 +125,7 @@ async function createValorTotalProduto(req, res, next) {
 
 async function getProduto(req, res, next) {
   try {
-    const data = JSON.parse(await readFile('pedidos.json'));
-    const pedidosEntregues = data.pedidos.filter(pedido => pedido.entregue);
-    const produtosQuantidade = {};
-    pedidosEntregues.forEach(pedido => {
-      if (produtosQuantidade[pedido.produto]) {
-        produtosQuantidade[pedido.produto]++;
-      } else {
-        produtosQuantidade[pedido.produto] = 1;
-      }
-    });
-
-    const produtosMaisVendidos = Object.entries(produtosQuantidade).map(
-      ([produto, quantidade]) => [produto, quantidade]
-    );
-
-    produtosMaisVendidos.sort((a, b) => b[1] - a[1]);
-
-    const resultadoFinal = produtosMaisVendidos.map(
-      ([produto, quantidade]) => `${produto} - ${quantidade}`
-    );
-    res.send(resultadoFinal);
+    res.send(await PedidosService.getProduto());
     global.logger.info(`GET /pedidos`);
   } catch (err) {
     next(err);
